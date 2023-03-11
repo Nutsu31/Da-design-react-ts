@@ -32,11 +32,15 @@
     justify-content: space-between;
 }
 .links {
-    text-decoration: none;
     color: white;
+    transition: 0.3s ease;
+}
+.links:hover{
+    color: rgb(248, 92, 36);
 }
 
 .linksDiv{
+    text-decoration: none;
     width: 100px;
     height: 70px;
     display: flex;
@@ -47,3 +51,4 @@
     color: rgb(248, 92, 36);
     border-bottom: 3px solid rgb(255, 91, 32);
 }
+

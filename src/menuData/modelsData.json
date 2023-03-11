@@ -1,0 +1,252 @@
+[
+    {
+        "name": "door",
+        "id": "1001",
+        "img": "./assets/models/model-1.png"
+    },
+    {
+        "name": "door",
+        "id": "1002",
+        "img": "./assets/models/model-2.png"
+    },
+    {
+        "name": "door",
+        "id": "1003",
+        "img": "./assets/models/model-3.png"
+    },
+    {
+        "name": "door",
+        "id": "1004",
+        "img": "./assets/models/model-4.png"
+    },
+    {
+        "name": "door",
+        "id": "1005",
+        "img": "./assets/models/model-5.png"
+    },
+    {
+        "name": "door",
+        "id": "1006",
+        "img": "./assets/models/model-6.png"
+    },
+    {
+        "name": "door",
+        "id": "1007",
+        "img": "./assets/models/model-7.png"
+    },
+    {
+        "name": "door",
+        "id": "1008",
+        "img": "./assets/models/model-8.png"
+    },
+    {
+        "name": "door",
+        "id": "1009",
+        "img": "./assets/models/model-9.png"
+    },
+    {
+        "name": "door",
+        "id": "1010",
+        "img": "./assets/models/model-10.png"
+    },
+    {
+        "name": "gate",
+        "id": "2001",
+        "img": "./assets/models/gates/gate1.png"
+    },
+    {
+        "name": "gate",
+        "id": "2002",
+        "img": "./assets/models/gates/gate2.png"
+    },
+    {
+        "name": "gate",
+        "id": "2003",
+        "img": "./assets/models/gates/gate3.png"
+    },
+    {
+        "name": "gate",
+        "id": "2004",
+        "img": "./assets/models/gates/gate4.png"
+    },
+    {
+        "name": "gate",
+        "id": "2005",
+        "img": "./assets/models/gates/gate5.png"
+    },
+    {
+        "name": "gate",
+        "id": "2006",
+        "img": "./assets/models/gates/gate6.png"
+    },
+    {
+        "name": "gate",
+        "id": "2007",
+        "img": "./assets/models/gates/gate7.png"
+    },
+    {
+        "name": "gate",
+        "id": "2008",
+        "img": "./assets/models/gates/gate8.png"
+    },
+    {
+        "name": "stair",
+        "id": "3001",
+        "img": "./assets/models/staircase/stair1.jpg"
+    },
+    {
+        "name": "stair",
+        "id": "3002",
+        "img": "./assets/models/staircase/stair2.jpg"
+    },
+    {
+        "name": "stair",
+        "id": "3003",
+        "img": "./assets/models/staircase/stair3.jpg"
+    },
+    {
+        "name": "stair",
+        "id": "3004",
+        "img": "./assets/models/staircase/stair4.jpg"
+    },
+    {
+        "name": "stair",
+        "id": "3005",
+        "img": "./assets/models/staircase/stair5.jpg"
+    },
+    {
+        "name": "stair",
+        "id": "3006",
+        "img": "./assets/models/staircase/stair6.jpg"
+    },
+    {
+        "name": "stair",
+        "id": "3007",
+        "img": "./assets/models/staircase/stair7.jpg"
+    },
+    {
+        "name": "stair",
+        "id": "3008",
+        "img": "./assets/models/staircase/stair8.jpg"
+    },
+    {
+        "name": "stair",
+        "id": "3009",
+        "img": "./assets/models/staircase/stair9.jpg"
+    },
+    {
+        "name": "stair",
+        "id": "3010",
+        "img": "./assets/models/staircase/stair10.jpg"
+    },
+    {
+        "name": "stair",
+        "id": "3011",
+        "img": "./assets/models/staircase/stair11.jpg"
+    },
+    {
+        "name": "slider-door",
+        "id": "4001",
+        "img": "./assets/models/wall/wall1.jpg"
+    },
+    {
+        "name": "slider-door",
+        "id": "4002",
+        "img": "./assets/models/wall/wall2.jpg"
+    },
+    {
+        "name": "slider-door",
+        "id": "4003",
+        "img": "./assets/models/wall/wall3.jpg"
+    },
+    {
+        "name": "slider-door",
+        "id": "4004",
+        "img": "./assets/models/wall/wall4.jpg"
+    },
+    {
+        "name": "slider-door",
+        "id": "4005",
+        "img": "./assets/models/wall/wall5.jpg"
+    },
+    {
+        "name": "slider-door",
+        "id": "4006",
+        "img": "./assets/models/wall/wall6.jpg"
+    },
+    {
+        "name": "slider-door",
+        "id": "4007",
+        "img": "./assets/models/wall/wall7.jpg"
+    },
+    {
+        "name": "grill",
+        "id": "5001",
+        "img": "./assets/models/grill/grill1.png"
+    },
+    {
+        "name": "grill",
+        "id": "5002",
+        "img": "./assets/models/grill/grill2.png"
+    },
+    {
+        "name": "Table",
+        "id": "6001",
+        "img": "./assets/models/tables/table1.jpg"
+    },
+    {
+        "name": "Table",
+        "id": "6002",
+        "img": "./assets/models/tables/table2.jpg"
+    },
+    {
+        "name": "Table",
+        "id": "6003",
+        "img": "./assets/models/tables/table3.jpg"
+    },
+    {
+        "name": "Table",
+        "id": "6004",
+        "img": "./assets/models/tables/table4.jpg"
+    },
+    {
+        "name": "Table",
+        "id": "6005",
+        "img": "./assets/models/tables/table5.jpg"
+    },
+    {
+        "name": "Table",
+        "id": "6006",
+        "img": "./assets/models/tables/table6.jpg"
+    },
+    {
+        "name": "Table",
+        "id": "6007",
+        "img": "./assets/models/tables/table7.png"
+    },
+    {
+        "name": "Table",
+        "id": "6008",
+        "img": "./assets/models/tables/table8.jpg"
+    },
+    {
+        "name": "Table",
+        "id": "6009",
+        "img": "./assets/models/tables/table9.jpg"
+    },
+    {
+        "name": "Table",
+        "id": "6010",
+        "img": "./assets/models/tables/table10.jpg"
+    },
+    {
+        "name": "Table",
+        "id": "6011",
+        "img": "./assets/models/tables/table11.jpg"
+    },
+    {
+        "name": "Table",
+        "id": "6012",
+        "img": "./assets/models/tables/table12.jpg"
+    }
+]

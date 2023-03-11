@@ -32,7 +32,6 @@ const menuList = [
 const Navbar = () => {
   // const [active, setActive] = useState("");
   const { pathname } = useLocation();
-  console.log(pathname);
   return (
     <>
       <div className={Styles.container}>
@@ -51,23 +50,22 @@ const Navbar = () => {
         <nav className={Styles.nav}>
           {menuList.map((list) => {
             return (
-              <div className={Styles.linksDiv} key={list.id}>
-                <Link
+              <Link to={list.path} className={Styles.linksDiv} key={list.id}>
+                <p
                   className={Styles.links}
-                  to={list.path}
                   style={{
                     color: pathname === list.path ? "rgb(255, 91, 32)" : "",
                   }}
                 >
                   {list.name}
-                </Link>
-              </div>
+                </p>
+              </Link>
             );
           })}
         </nav>
       </div>
       <div
-        style={{ width: "100%", height: "20px", background: "#232f3e" }}
+        style={{ width: "100%", height: "24px", background: "#232f3e" }}
       ></div>
     </>
   );

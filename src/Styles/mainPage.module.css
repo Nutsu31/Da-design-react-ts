@@ -1,0 +1,126 @@
+.listContainer {
+    width: 100%;
+    height: 120px;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.list{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color:#232f3e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease;
+}
+.list:hover{
+    background-color: rgb(248, 92, 36);
+}
+.listDiv{
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.linkNames{
+    font-size: 14px;
+    font-weight: 700;
+    color: #232f3e;
+}
+
+.slide{
+    width: 100%;
+    height: fit-content;
+    /* background: url("../assets/slider.png") center no-repeat; */
+    background-color: linear-gradient(66deg, rgba(78,78,78,0.7791491596638656) 100%, rgba(170,166,166,0.4990371148459384) 100%);
+}
+/* -------------------------------------------------------------- */
+
+/* Middle section Img and Form Styles */
+
+.middleSectionDiv{
+    width: 100%;
+    height: 440px;
+    padding: 0 124px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #232f3e; */
+}
+
+.formContainer{
+    width: 500px;
+    height: 367px;
+    padding: 0 64px;
+    text-align: center;
+    border-radius: 25px  0 0 25px  ;
+    background-color: #232f3e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form{
+    width: 300px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.headerText{
+    color: rgb(255, 91, 32);
+    text-shadow: 1px 10px 7px black;
+}
+.welcomeText{
+    color: white;
+    line-height: 24px;
+}
+
+.contactNumberInput{
+    width: 220px;
+    height: 40px;
+    background-color: #415063;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 8px 0 0 8px;
+    padding:  0 16px;
+}
+::placeholder{
+    color: white;
+}
+
+.contactNumberButton{
+    color: white;
+    width: 70px;
+    height: 40px;
+    background-color: rgb(255, 91, 32);
+    border: none;
+    outline: none;
+    border-radius: 0 8px 8px 0;
+}
+.imgContainer{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img{
+    width: 500px;
+    height: 367px;
+    border-radius: 0 25px 25px 0;
+    
+}
+
+/* -------------------------------- */

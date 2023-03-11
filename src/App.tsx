@@ -7,6 +7,7 @@ import {
 
 import "./App.css";
 import ContactPage from "./page/ContactPage";
+import List from "./Components/List";
 import MainPage from "./page/MainPage";
 import Root from "./page/Root";
 import SalesPage from "./page/SalesPage";
@@ -16,8 +17,9 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
       <Route index element={<MainPage />} />
+      <Route path="/:path" element={<List />} />
       <Route path="contact" element={<ContactPage />} />
-      <Route path="service" element={<ServicePage />} />
+      <Route path="services" element={<ServicePage />} />
       <Route path="sales" element={<SalesPage />} />
     </Route>
   )

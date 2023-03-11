@@ -1,0 +1,33 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.viewImg{
+    max-width: 500px;
+    max-height: 700px;
+}
+.closer{
+    width: 26px;
+    height: 24px;
+    background-color: rgba(252, 75, 11,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    cursor: pointer;
+
+}
+.x{
+    color: white;
+    font-size: 14px;
+    font-weight: 100;
+}
