@@ -7,7 +7,7 @@ const Footer = () => {
         width: "100%",
         height: "70px",
         background: "#131921",
-        marginTop: "24px",
+        marginTop: 24,
       }}
     ></footer>
   );
