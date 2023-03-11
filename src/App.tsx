@@ -12,10 +12,12 @@ import MainPage from "./page/MainPage";
 import Root from "./page/Root";
 import SalesPage from "./page/SalesPage";
 import ServicePage from "./page/ServicePage";
+import AdminPanel from "./page/AdminPanel";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
+      <Route path="/admin-panel" element={<AdminPanel />} />
       <Route index element={<MainPage />} />
       <Route path="/:path" element={<List />} />
       <Route path="contact" element={<ContactPage />} />

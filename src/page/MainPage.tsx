@@ -5,6 +5,7 @@ import { Form, Link } from "react-router-dom";
 
 import MiddlePhoto from "../assets/exteriorDoor.jpg";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 const MainPage = () => {
   return (
     <>
@@ -34,6 +35,8 @@ type FormData = {
 const welcomeText =
   "კომპანია 'DA Design' გთავაზობთ უმაღლესი ხარისხის რკინის ნაკეთობებს, ეს იქნება კარები,მოაჯირi,ვიტრინა , კიბე, ჭიშკარი თუ უამრავი ინტერიერის სხვა დეტალები. თუ ხართ დაინტერესებული ჩვენი კომპანიით, მოგვწერეთ ტელეფონი ნომერი და ჩვენ დაგიკავშირდებით";
 
+const numberValidation = "მიუთითეთ ვალიდური ნომერი მაგ: 599123456";
+
 const MiddleFormAndWallpaper = () => {
   const {
     register,
@@ -41,7 +44,19 @@ const MiddleFormAndWallpaper = () => {
     formState: { errors },
   } = useForm<FormData>();
 
-  const onSubmit = handleSubmit((data) => console.log(data));
+  const onSubmit = handleSubmit((data) => {
+    console.log(data);
+    axios({
+      method: "post",
+      url: "http://localhost:4000/user",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: {
+        number: data.number,
+      },
+    });
+  });
   return (
     <section className={Styles.middleSectionDiv}>
       <div className={Styles.formContainer}>
@@ -53,12 +68,15 @@ const MiddleFormAndWallpaper = () => {
         <p className={Styles.welcomeText}>{welcomeText}</p>
 
         <form className={Styles.form} onSubmit={onSubmit}>
-          <input
-            className={Styles.contactNumberInput}
-            placeholder="ტელეფონი"
-            {...register("number")}
-          />
-          <button className={Styles.contactNumberButton}>გაგზავნა</button>
+          <div>
+            <input
+              className={Styles.contactNumberInput}
+              placeholder="ტელეფონი"
+              {...register("number", { pattern: /^\d{9}$/ })}
+            />
+            <button className={Styles.contactNumberButton}>გაგზავნა</button>
+          </div>
+          {errors.number && <p className={Styles.error}>{numberValidation}</p>}
         </form>
       </div>
 

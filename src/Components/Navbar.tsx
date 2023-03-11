@@ -42,6 +42,9 @@ const Navbar = () => {
             გელოდებით მირიან მეფის N98
           </span>
         </p>
+        <Link to="admin-panel" className={Styles.adminLink}>
+          Login
+        </Link>
       </div>
 
       <div className={Styles.logoAndLinksDiv}>
