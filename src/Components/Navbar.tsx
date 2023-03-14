@@ -30,7 +30,6 @@ const menuList = [
   },
 ];
 const Navbar = () => {
-  // const [active, setActive] = useState("");
   const { pathname } = useLocation();
   return (
     <>

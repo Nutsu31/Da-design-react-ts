@@ -23,7 +23,7 @@
 ::placeholder{
     color: orangered;
     font-size: 12px;
-    text-align: center;
+    text-align: left;
 }
 .logInButton{
     color: white;
@@ -39,4 +39,11 @@
 .logInButton:hover{
     background: white;
     color: orangered; 
+}
+
+.err{
+    color: red;
+    font-size: 14px;
+    margin-top: 24px;
+
 }

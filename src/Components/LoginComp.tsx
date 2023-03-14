@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Styles from "../Styles/loginComp.module.css";
-import axsios from "axios";
 
 interface LoginCompTypes {
+  logIn: boolean;
   setLogIn: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -12,9 +12,10 @@ interface DataTypes {
   password: string;
 }
 
-const LoginComp = ({ setLogIn }: LoginCompTypes) => {
+const LoginComp = ({ setLogIn, logIn }: LoginCompTypes) => {
   const [showPass, setShowPass] = useState(false);
   const { register, handleSubmit } = useForm<DataTypes>();
+  const [err, setErr] = useState("");
   const onSubmit = handleSubmit(async (datas) => {
     const res = await fetch("http://localhost:4000/user");
     const reqData: DataTypes[] = await res.json();
@@ -25,8 +26,9 @@ const LoginComp = ({ setLogIn }: LoginCompTypes) => {
     ) {
       setLogIn((current) => !current);
     } else {
-      console.log("Unexpected trying access");
+      setErr("არასწორია მომხმარებლის სახელი ან მისამართი");
     }
+    return;
   });
 
   return (
@@ -57,6 +59,7 @@ const LoginComp = ({ setLogIn }: LoginCompTypes) => {
           onClick={() => setShowPass(!showPass)}
         ></div>
         <button className={Styles.logInButton}>Log-in</button>
+        {logIn ? null : <p className={Styles.err}>{err}</p>}
       </form>
     </>
   );

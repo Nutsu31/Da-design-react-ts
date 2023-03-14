@@ -1,33 +1,19 @@
 import React, { useState } from "react";
-import mainMenuData from "../menuData/mainMenu";
 import Styles from "../Styles/mainPage.module.css";
-import { Form, Link } from "react-router-dom";
 
 import MiddlePhoto from "../assets/exteriorDoor.jpg";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import SuccesfulSendMessage from "../Components/SuccesfulSendMessage";
+import SideBar from "../Components/SideBar";
+import mainMenu from "../menuData/mainMenu.json";
 
 const MainPage = () => {
   return (
-    <>
+    <div className={Styles.mainCOntainer}>
+      <SideBar items={mainMenu} />
       <MiddleFormAndWallpaper />
-
-      <div className={Styles.slide}></div>
-
-      <div className={Styles.listContainer}>
-        {mainMenuData.map((item) => (
-          <div key={item.name}>
-            <div className={Styles.listDiv}>
-              <Link to={item.path} className={Styles.list}>
-                <img style={{ width: "50px", height: "60px" }} src={item.img} />
-              </Link>
-              <p className={Styles.linkNames}>{item.name}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </>
+    </div>
   );
 };
 
@@ -37,7 +23,7 @@ type FormData = {
 };
 
 const welcomeText =
-  "კომპანია 'DA Design' გთავაზობთ უმაღლესი ხარისხის რკინის ნაკეთობებს, ეს იქნება კარები,მოაჯირi,ვიტრინა , კიბე, ჭიშკარი თუ უამრავი ინტერიერის სხვა დეტალები. თუ ხართ დაინტერესებული ჩვენი კომპანიით, მოგვწერეთ ტელეფონი ნომერი და ჩვენ დაგიკავშირდებით";
+  "კომპანია 'DA Design' გთავაზობთ უმაღლესი ხარისხის რკინის ნაკეთობებს, ეს იქნება კარები,მოაჯირი ,ვიტრინა , კიბე, ჭიშკარი თუ უამრავი ინტერიერის სხვა დეტალები. თუ ხართ დაინტერესებული ჩვენი კომპანიით, მოგვწერეთ ტელეფონი ნომერი და ჩვენ დაგიკავშირდებით";
 const numberValidation = "მიუთითეთ ვალიდური ნომერი მაგ: 599123456";
 
 const MiddleFormAndWallpaper = () => {

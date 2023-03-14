@@ -17,9 +17,9 @@ import AdminLogin from "./page/AdminLogin";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
-      <Route path="/admin-panel" element={<AdminLogin />} />
       <Route index element={<MainPage />} />
       <Route path="/:path" element={<List />} />
+      <Route path="admin-panel" element={<AdminLogin />} />
       <Route path="contact" element={<ContactPage />} />
       <Route path="service" element={<ServicePage />} />
       <Route path="sales" element={<SalesPage />} />
