@@ -16,11 +16,25 @@ function SideBar({
 }) {
   const { pathname } = useLocation();
   console.log(pathname);
+
+  //  Get Each Item Background COlor which location === item.path
+
+  function getListColor(list: string) {
+    if (pathname === list) {
+      return { background: "orangered" };
+    }
+  }
+
   return (
     <div className={Styles.sideContainer}>
       <img src={MenuLogo} alt="logo" className={Styles.logo} />
       {items.map((item) => (
-        <Link to={item?.path} key={item?.path} className={Styles.link}>
+        <Link
+          to={item?.path}
+          key={item?.path}
+          className={Styles.link}
+          style={getListColor(item.path)}
+        >
           <img
             src={item?.img}
             alt="menu items img"
