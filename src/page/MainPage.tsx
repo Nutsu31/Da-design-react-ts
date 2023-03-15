@@ -46,6 +46,7 @@ const MiddleFormAndWallpaper = () => {
       },
       data: {
         number: data.number,
+        done: false,
       },
     })
       .then((res) => setSuccessMessage(res.data))

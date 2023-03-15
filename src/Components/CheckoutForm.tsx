@@ -17,6 +17,7 @@ const CheckoutForm = ({ setCheckout }: CheckoutFormTypes) => {
         "Content-Type": "application/json",
       },
       data: {
+        done: "false",
         firstname: data.Firstname,
         lastname: data.Lastname,
         number: data.Number,

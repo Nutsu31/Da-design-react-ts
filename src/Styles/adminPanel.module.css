@@ -55,8 +55,29 @@
     width: 240px;
     min-height: 50px;
     padding: 0 16px;
-    outline: 3px solid orangered;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    background: #9eb0c7;
+    background: #bec4ca;
+    gap: 10px;
+}
+
+.doneTask{
+    color: white;
+    width: 100%;
+    height: 24px;
+    background-color: green;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+.deleteTask{
+    color: white;
+    width: 100%;
+    height: 24px;
+    background-color: red;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
