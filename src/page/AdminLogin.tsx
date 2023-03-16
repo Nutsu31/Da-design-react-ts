@@ -1,6 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { getNumbersForCall } from "../Components/getAndSendRequestApi";
+import {
+  DataTypes,
+  deleteNumbers,
+  getNumbersForCall,
+  handleDeleteTypes,
+} from "../Components/getAndSendRequestApi";
 import LoginComp from "../Components/LoginComp";
 import SideBar from "../Components/SideBar";
 import Styles from "../Styles/adminPanel.module.css";
@@ -23,20 +28,10 @@ const AdminLogin = () => {
 
 export default AdminLogin;
 
-type DataTypes = {
-  done?: boolean;
-  firstname?: string;
-  lastname?: string;
-  address?: string;
-  ironwork?: string;
-  modelNumber?: number;
-  number?: string;
-}[];
-
 const AdminPanel = () => {
   const [datas, setDatas] = useState<DataTypes>([]);
   const [checkoutAndCall, setCheckoutAndCall] = useState("/call");
-  const [task, setTask] = useState({});
+  const [deleteTask, setDeleteTask] = useState({});
   const [doneTask, setDoneTask] = useState({});
 
   useEffect(() => {
@@ -49,6 +44,13 @@ const AdminPanel = () => {
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
   }, [doneTask]);
+
+  useEffect(() => {
+    axios
+      .delete(`http://localhost:4000/call/${deleteTask.number}`)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  }, [deleteTask]);
 
   return (
     <div className={Styles.adminContainer}>
@@ -103,14 +105,22 @@ const AdminPanel = () => {
               <button
                 className={Styles.doneTask}
                 onClick={() => {
-                  data.done = true;
+                  data.done = !data.done;
                   console.log(data);
                   setDoneTask(data);
                 }}
               >
                 Done
               </button>
-              <button className={Styles.deleteTask}>Delete Task</button>
+              <button
+                className={Styles.deleteTask}
+                onClick={() => {
+                  console.log(data);
+                  setDeleteTask(data);
+                }}
+              >
+                Delete Task
+              </button>
             </div>
           );
         })}
