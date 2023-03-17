@@ -17,11 +17,15 @@ export async function getNumbersForCall(setState: React.Dispatch<React.SetStateA
     }
 
 
-export interface handleDeleteTypes {
-    checkoutAndCall: string;
-    deleteTask?: { number: string };
-    setDeleteTask: React.Dispatch<React.SetStateAction<{}>>;
-    data: {
+export function isDoneTask (checkoutAndCall : string, doneTask:handleTypes) {
+  axios
+  .put(`http://localhost:4000${checkoutAndCall}`, doneTask)
+  .then((res) => console.log(res.data))
+  .catch((err) => console.log(err));
+}
+
+
+export interface handleTypes {
       done?: boolean;
       firstname?: string;
       lastname?: string;
@@ -29,8 +33,9 @@ export interface handleDeleteTypes {
       ironwork?: string;
       modelNumber?: number;
       number?: string;
-    };
   }
-export function deleteNumbers({checkoutAndCall, data}:handleDeleteTypes) {
-    axios.delete(`http://localehost:4000${checkoutAndCall}`).then((res) => console.log(res)).catch((err) => console.log(err))
+export function deleteNumbers(checkoutAndCall:string, deleteTask: handleTypes ) {
+  axios.delete(`http://localhost:4000${checkoutAndCall}/${deleteTask?.number}`)
+  .then((res) => console.log(res))
+  .catch((err) => console.log(err));
 }

@@ -1,0 +1,38 @@
+.dataPanel{
+    width: 100%;
+    padding: 16px;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.dataList{
+    width: 240px;
+    min-height: 50px;
+    padding: 0 16px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background: #bec4ca;
+    gap: 10px;
+}
+
+.doneTask{
+    color: white;
+    width: 100%;
+    height: 24px;
+    background-color: green;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+.deleteTask{
+    color: white;
+    width: 100%;
+    height: 24px;
+    background-color: red;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}

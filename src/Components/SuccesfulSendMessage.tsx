@@ -18,7 +18,7 @@ const SuccesfulSendMessage = ({
       onClick={() => setSuccessMessage((current) => (current = ""))}
     >
       <div className={Styles.imgWrapper}>
-        <img className={Styles.img} src={SuccesIcon} />
+        <img className={Styles.img} src={SuccesIcon} alt="successful icon" />
         <h1>{message}</h1>
       </div>
     </div>

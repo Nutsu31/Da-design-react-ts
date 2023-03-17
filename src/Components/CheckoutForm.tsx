@@ -9,7 +9,6 @@ type CheckoutFormTypes = {
 const CheckoutForm = ({ setCheckout }: CheckoutFormTypes) => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = handleSubmit((data) => {
-    console.log(data);
     axios({
       method: "post",
       url: "http://localhost:4000/checkout",

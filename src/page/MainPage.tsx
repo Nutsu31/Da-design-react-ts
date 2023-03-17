@@ -90,7 +90,7 @@ const MiddleFormAndWallpaper = () => {
       </div>
 
       <div className={Styles.imgContainer}>
-        <img className={Styles.img} src={MiddlePhoto} />
+        <img className={Styles.img} src={MiddlePhoto} alt="doorPhoto" />
       </div>
     </section>
   );

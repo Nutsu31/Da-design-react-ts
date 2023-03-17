@@ -1,13 +1,13 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   DataTypes,
   deleteNumbers,
   getNumbersForCall,
-  handleDeleteTypes,
+  isDoneTask,
 } from "../Components/getAndSendRequestApi";
 import LoginComp from "../Components/LoginComp";
-import SideBar from "../Components/SideBar";
+import RecivedTask from "../Components/RecivedTask";
+import UploadItem from "../Components/UploadItem";
 import Styles from "../Styles/adminPanel.module.css";
 
 const AdminLogin = () => {
@@ -33,23 +33,18 @@ const AdminPanel = () => {
   const [checkoutAndCall, setCheckoutAndCall] = useState("/call");
   const [deleteTask, setDeleteTask] = useState({});
   const [doneTask, setDoneTask] = useState({});
+  const [uploadList, setUploadList] = useState(false);
 
   useEffect(() => {
     getNumbersForCall(setDatas, checkoutAndCall);
   }, [checkoutAndCall]);
 
   useEffect(() => {
-    axios
-      .put(`http://localhost:4000${checkoutAndCall}`, doneTask)
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
+    isDoneTask(checkoutAndCall, doneTask);
   }, [doneTask]);
 
   useEffect(() => {
-    axios
-      .delete(`http://localhost:4000/call/${deleteTask.number}`)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+    deleteNumbers(checkoutAndCall, deleteTask);
   }, [deleteTask]);
 
   return (
@@ -57,74 +52,39 @@ const AdminPanel = () => {
       <div className={Styles.controlPanel}>
         <button
           className={Styles.buttons}
-          onClick={() => setCheckoutAndCall("/call")}
+          // onClick={() => setCheckoutAndCall("/upload")}
+          onClick={() => setUploadList(!uploadList)}
+        >
+          + მოდელის დამატება
+        </button>
+        <button
+          className={Styles.buttons}
+          onClick={() => {
+            setCheckoutAndCall("/call");
+            setUploadList(false);
+          }}
         >
           დაურეკე
         </button>
         <button
           className={Styles.buttons}
-          onClick={() => setCheckoutAndCall("/checkout")}
+          onClick={() => {
+            setCheckoutAndCall("/checkout");
+            setUploadList(false);
+          }}
         >
           შეკვეთა
         </button>
       </div>
-
-      <div className={Styles.dataPanel}>
-        <p
-          style={{
-            color: "orangered",
-            width: "100%",
-            height: "24px",
-            padding: "0 16px",
-            backgroundColor: "#232f3e",
-          }}
-        >
-          შეკვეთების რაოდენობა: {datas.length}
-        </p>
-        {datas.map((data) => {
-          return (
-            <div
-              className={Styles.dataList}
-              key={Math.random() * Math.random()}
-              style={{
-                background: data.done === true ? "lightgreen" : "",
-              }}
-            >
-              <h3>ნომერი: {data.number}</h3>
-
-              {data.firstname ? (
-                <div>
-                  <p>სახელი: {data.firstname}</p>
-                  <p>გვარი: {data.lastname}</p>
-                  <p>ტელეფონი: {data.number}</p>
-                  <p>მისამართი: {data.address}</p>
-                  <p>ნაკეთობა: {data.ironwork}</p>
-                  <p>მოდელიN: {data.modelNumber}</p>
-                </div>
-              ) : null}
-              <button
-                className={Styles.doneTask}
-                onClick={() => {
-                  data.done = !data.done;
-                  console.log(data);
-                  setDoneTask(data);
-                }}
-              >
-                Done
-              </button>
-              <button
-                className={Styles.deleteTask}
-                onClick={() => {
-                  console.log(data);
-                  setDeleteTask(data);
-                }}
-              >
-                Delete Task
-              </button>
-            </div>
-          );
-        })}
-      </div>
+      {uploadList ? (
+        <UploadItem />
+      ) : (
+        <RecivedTask
+          setDeleteTask={setDeleteTask}
+          setDoneTask={setDoneTask}
+          datas={datas}
+        />
+      )}
     </div>
   );
 };
